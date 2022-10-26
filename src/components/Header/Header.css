@@ -1,0 +1,25 @@
+.navbar a{
+    /* color: #FFFF; */
+}
+.navbar a:hover{
+    color: tomato;
+    font-weight: bold;
+    transition: .4s;
+}
+/* .header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: transparent;
+    color: #FFFF;
+    z-index: 100;
+} */
+
+.header{
+    background: rgb(75, 69, 155);
+    color: white;
+}
+.header a{
+    color: white;
+}

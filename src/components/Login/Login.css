@@ -1,0 +1,14 @@
+.login-form{
+    width: 350px;
+    height: auto;
+    margin-right: 1px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.form input{
+    width: 100%;
+}
+.form h2{
+    width: 100%;
+}

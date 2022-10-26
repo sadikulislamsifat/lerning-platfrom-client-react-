@@ -1,0 +1,24 @@
+.not-found-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+.noFoundBody img{
+    width: 100%;
+}
+.descripton p{
+    font-size: 19px;
+    color: gray;
+}
+.goHomeBtn{
+    padding: 12px 18px;
+    background: rgb(69, 60, 184);
+    border-radius: 20px;
+    color: white;
+    border: none;
+}
+.goHomeBtn:hover{
+    background: rgb(51, 44, 139);
+}
