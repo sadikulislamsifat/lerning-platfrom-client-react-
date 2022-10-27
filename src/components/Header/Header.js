@@ -40,8 +40,15 @@ const Header = () => {
             <Link to='/home' className='fw-semibold nav-link     ms-2' href="#action1">Home</Link>
             <Link to='/courses' className='fw-semibold nav-link  ms-2' href="#action2">Couses</Link>
             <Link to='/blog' className='fw-semibold nav-link     ms-2' href="/">Blog</Link>  
+
+            {
+              user?.uid ?
+              <Link  onClick={handleLogOut} className='fw-semibold nav-link me-4' href="#">Sing Out</Link>
+              :
+              <Link to='/singup'  className='fw-semibold nav-link me-4' href="#">Login</Link>
+
+            }
            
-              <Link to='/singup' onClick={handleLogOut} className='fw-semibold nav-link me-4' href="#">{user?.uid ? "Sing Out" : "Login"}</Link>
               
             
           </Nav>

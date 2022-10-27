@@ -4,6 +4,9 @@ import './Home.css';
 import { FaFacebook, FaGithub, FaGoogle,  } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';
+import Courses from './../Courses/Courses';
+import Subjects from '../Courses/Subjects/Subjects';
+import Blog from './../Blog/Blog';
 
 const Home = () => {
     const {user} = useContext(AuthContext);
@@ -14,10 +17,10 @@ const Home = () => {
            <div className='container mt-md-5'>
            <div className="content">
           <div className='title'>
-          <h1>Web Design & <br/><span>Development</span> <br/>Course</h1>
-            <p className="par">Explore our structured learning paths to discover everything you need to know about building for the modern web.</p>
+          <h1 className='slide-left'>Web Design & <br/><span>Development</span> <br/>Course</h1>
+            <p className="par slide-left">Explore our structured learning paths to discover everything you need to know about building for the modern web.</p>
 
-                <button className="cn"><a href="#">JOIN US</a></button>
+                <button className="cn slide-left"><a href="#">JOIN US</a></button>
           </div>
 
                {
@@ -34,9 +37,9 @@ const Home = () => {
                     <p className="liw">Log in with</p>
 
                     <div class="d-flex justify-content-between px-5 fs-2 icons">
-                        <a href="#" className='me-3'><FaGoogle></FaGoogle> </a>
-                        <a href="#" className='me-3'><FaGithub></FaGithub> </a>
-                        <a href="#" className='me-3'><FaFacebook></FaFacebook> </a>
+                        <Link to='/singup' className='me-3'><FaGoogle></FaGoogle> </Link>
+                        <Link to='/singup' className='me-3'><FaGithub></FaGithub> </Link>
+                        <Link to='/singup' className='me-3'><FaFacebook></FaFacebook> </Link>
                         
                     </div>
 
@@ -53,9 +56,9 @@ const Home = () => {
                 <p className="liw">Log in with</p>
 
                 <div class="d-flex justify-content-between px-5 fs-2 icons">
-                    <a href="#" className='me-3'><FaGoogle></FaGoogle> </a>
-                    <a href="#" className='me-3'><FaGithub></FaGithub> </a>
-                    <a href="#" className='me-3'><FaFacebook></FaFacebook> </a>
+                    <Link to='/singup' className='me-3'><FaGoogle></FaGoogle> </Link>
+                    <Link to='/singup' className='me-3'><FaGithub></FaGithub> </Link>
+                    <Link to='/singup' className='me-3'><FaFacebook></FaFacebook> </Link>
                     
                 </div>
 
@@ -63,6 +66,10 @@ const Home = () => {
                }
                     </div>
            </div>
+        </div>
+        <div>
+           {/* <Blog></Blog> */}
+
         </div>
         </div>
     );

@@ -29,9 +29,9 @@ const Login = () => {
        <div style={{height: '90vh'}}>
          <div className='container d-flex justify-content-center '>
               <form  onSubmit={handleSubmit} className="form login-form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here" />
-                    <input type="password" name="password" placeholder="Enter Password Here" />
+                    <h2 className='mt-4'>Login Here</h2>
+                    <input className='' type="email" name="email" placeholder="Enter Email Here" />
+                    <input className='' type="password" name="password" placeholder="Enter Password Here" />
                     <p className='text-danger mt-1'>{error}</p>
                     <button className="btnn"><a href="#">Login</a></button>
 
@@ -40,9 +40,9 @@ const Login = () => {
                     <p className="liw text-white">Log in with</p>
 
                    <div className="d-flex justify-content-between container px-5 icons">
-                   <a  className='text-white fs-2'><FaGoogle></FaGoogle> </a>
-                   <a  className='text-white fs-2'><FaGithub></FaGithub> </a>
-                   <a  className='text-white fs-2'><FaFacebook></FaFacebook> </a>
+                   <Link to='/singup' className='text-white fs-2'><FaGoogle></FaGoogle> </Link>
+                   <Link to='/singup' className='text-white fs-2'><FaGithub></FaGithub> </Link>
+                   <Link to='/singup' className='text-white fs-2'><FaFacebook></FaFacebook> </Link>
         
                  </div>
                 </form>

@@ -18,8 +18,9 @@ const Courses = () => {
                 </div>
             </div>
 
-         <div className='container'>
-         <div className=' row row-cols-1  row-cols-md-3 mt-5 g-4'>
+         <div className='container mt-5'>
+            <h3>Our Courses</h3>
+         <div className=' row row-cols-1 mt-1 row-cols-md-3  g-4'>
           {
             allSubjects.map(subject => <Subjects
             key={subject.id}
