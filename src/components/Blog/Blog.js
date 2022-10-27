@@ -8,7 +8,7 @@ const Blog = () => {
     const {myStyle} = useContext(AuthContext);
     console.log(blogData)
     return (
-        <div style={myStyle} className=''>
+        <div style={myStyle} className=' '>
           <div className="">
           <div style={{height: '30vh', width: '100%'}} className=" {myStyle.backgoundColor === 'black' ? 'bg-dark' : 'bg-light'} d-flex justify-content-center align-items-center">
            <div className=' text-center'>
@@ -17,7 +17,7 @@ const Blog = () => {
            </div>
            </div>
           </div>
-           <div className='w-100 container mt-5 mb-5'>
+           <div className='w-100 container mt-5 pb-5'>
             <div style={myStyle} className="row row-cols-1 row-cols-md-3 g-4">
                 {
                     blogData.map(data => <BlogItem
