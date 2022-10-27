@@ -8,12 +8,12 @@ const Courses = () => {
 
     const allSubjects = useLoaderData();
     console.log(allSubjects);
-    const {darkMode} = useContext(AuthContext);
+    const {darkMode , myStyle} = useContext(AuthContext);
 
     return (
-        <div className=''>
+        <div style={myStyle} className=''>
 
-           <div style={{height: '35vh', width: '100%'}} className= " d-flex   justify-content-center align-items-center bg-light">
+           <div style={{height: '35vh', width: '100%'}} className= " d-flex   justify-content-center align-items-center ">
            <div >
                 <div className='text-center w-100 container'>
                     <p className='fs-1'>Learn</p>

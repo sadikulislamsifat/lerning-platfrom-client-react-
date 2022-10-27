@@ -10,11 +10,20 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState("sifat");
     const [loading, setLoading] = useState(true);
     
-    const [darkMode, setDarkMode] = useState({
-        color: 'white',
-        backgroundColor: 'black'
-    });
-
+    const [darkMode, setDarkMode] = useState(false);
+    console.log("dark mode" ,darkMode)
+    let myStyle = {}
+    if(darkMode){
+        myStyle = {
+            color: "white",
+            backgroundColor:  'black'
+        }
+    }else{
+        myStyle = {
+            color: "black",
+            backgroundColor:  'white'
+        }
+    }
 
     const loginProvider = (provider) => {
         setLoading(true);
@@ -71,7 +80,9 @@ const AuthProvider = ({children}) => {
         darkMode,
         verifyEmail,
         setLoading,
-        loading
+        loading,
+        setDarkMode,
+        myStyle
 
     };
     return (

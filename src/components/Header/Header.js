@@ -18,7 +18,7 @@ const Header = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const {user, logOut} = useContext(AuthContext);
+  const {user, logOut, setDarkMode} = useContext(AuthContext);
   // console.log(user);
 
   const handleLogOut = () => {
@@ -28,6 +28,7 @@ const Header = () => {
   }
 
   const handleDarkModeToggle = event => {
+    setDarkMode(event.target.checked)
     setDarkBtn(event.target.checked)
   }
 
