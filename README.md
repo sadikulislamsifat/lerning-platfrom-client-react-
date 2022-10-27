@@ -7,7 +7,7 @@ Framwork : Bootstrap
 5. singup page add
 6. toggle dark light mode add
 7. all data add in default home page
-8.
+8. pdf file added
 9. google login authentication add
 10. gitHub athentication add
 11. facebook athentication add
