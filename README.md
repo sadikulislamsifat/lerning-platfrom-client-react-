@@ -1,3 +1,5 @@
+Framwork : Bootstrap
+
 1. animation home page added
 2. course page add
 3. blog page add
@@ -5,7 +7,7 @@
 5. singup page add
 6. toggle dark light mode add
 7. all data add in default home page
-8. botstrap use
+8.
 9. google login authentication add
 10. gitHub athentication add
 11. facebook athentication add
