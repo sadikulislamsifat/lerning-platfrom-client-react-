@@ -7,7 +7,7 @@ const Subjects = ({subject}) => {
     const {achivment, banner, description, subject_name} = subject;
     return (
         <div>
-            <div style={{height: '310px'}} className="col subjects-card mb-3">
+            <div style={{height: '310px', color:'black'}} className="col subjects-card mb-3">
     <div className="card h-100 p-2">
         <div className='d-flex justify-content-between'>
             <p>Course</p>

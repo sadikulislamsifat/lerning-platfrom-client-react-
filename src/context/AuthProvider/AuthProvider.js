@@ -7,7 +7,12 @@ const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
 
-    const [user, setUser] = useState("sifat")
+    const [user, setUser] = useState("sifat");
+    
+    const [darkMode, setDarkMode] = useState({
+        color: 'white',
+        backgroundColor: 'black'
+    });
 
 
     const loginProvider = (provider) => {
@@ -48,7 +53,8 @@ const AuthProvider = ({children}) => {
         logOut,
         createUser, 
         updateUserprofile, 
-        singIn
+        singIn,
+        darkMode
         
     };
     return (

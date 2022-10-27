@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { FaUser, FaUserPlus, FaWindowClose } from 'react-icons/fa';
+import { HiSun } from 'react-icons/hi';
 import './Header.css';
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
@@ -52,6 +53,9 @@ const Header = () => {
               
             
           </Nav>
+          <div className='mt-2 pb-3'>
+            <span className='fs-3 me-3 ms-2 ' type=""> <HiSun className='text-warning'></HiSun> </span>
+          </div>
           <div onClick={handleShow}>
             {
              user?.photoURL ? 
