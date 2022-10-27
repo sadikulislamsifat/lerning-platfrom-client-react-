@@ -1,12 +1,17 @@
 import React, {useContext, useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FaFacebook, FaGithub, FaGoogle,  } from "react-icons/fa";
 import { AuthContext } from './../../context/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
-    const {singIn} = useContext(AuthContext);
+    const {singIn, setLoading} = useContext(AuthContext);
     const [error , setError] = useState('');
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,10 +23,19 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('')
+            if(user.emailVerified){
+                navigate(from, {replace: true})
+            }else{
+                toast.error('Your email is not verified. Please verify your email')
+            }
         })
         .catch(e => {
         console.error(e)
         setError(e.message)
+        })
+        .finaly(() => {
+            setLoading(false)
         })
     }
 

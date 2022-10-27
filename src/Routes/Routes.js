@@ -8,6 +8,7 @@ import Main from "../components/Main/Main";
 import NotFound from "../components/NotFound/NotFound";
 import Service from "../components/Service/Service";
 import SingUp from "../components/SingUp/SingUp";
+import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -40,7 +41,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/subjects/:id',
                 loader: ({params}) => fetch(`https://e-school-server-ten.vercel.app/subjects/${params.id}`),
-                element:<Course></Course>
+                element:<PrivateRoute><Course></Course></PrivateRoute>
 
             },
             {

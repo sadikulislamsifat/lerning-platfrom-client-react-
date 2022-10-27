@@ -8,6 +8,7 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState("sifat");
+    const [loading, setLoading] = useState(true);
     
     const [darkMode, setDarkMode] = useState({
         color: 'white',
@@ -16,26 +17,33 @@ const AuthProvider = ({children}) => {
 
 
     const loginProvider = (provider) => {
+        setLoading(true);
+
         return signInWithPopup(auth, provider);
     }
 
     const verifyEmail = () => {
+        setLoading(true);
         return sendEmailVerification(auth.currentUser)
     }
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
     const singIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const updateUserprofile = (profile) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, profile)
     }
 
@@ -44,6 +52,8 @@ const AuthProvider = ({children}) => {
             if(currentUser === null || currentUser.emailVerified){
                 setUser(currentUser);
             }
+        setLoading(false);
+
         });
         return () => {
             unsubscribe();
@@ -57,8 +67,10 @@ const AuthProvider = ({children}) => {
         updateUserprofile, 
         singIn,
         darkMode,
-        verifyEmail
-        
+        verifyEmail,
+        setLoading,
+        loading
+
     };
     return (
         <div>
