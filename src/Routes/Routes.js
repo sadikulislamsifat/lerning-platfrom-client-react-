@@ -17,23 +17,29 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element:<Home></Home>
+                loader: () => fetch('https://e-school-server-ten.vercel.app/subjects'),
+                loader: () => fetch('https://e-school-server-ten.vercel.app/blog'),
+                element:<Home></Home>,
+                
 
             },
             {
                 path: '/home',
-                element:<Home></Home>
+                loader: () => fetch('https://e-school-server-ten.vercel.app/subjects'),
+                element:<Home></Home>,
+                loader: () => fetch('https://e-school-server-ten.vercel.app/blog')
+                
 
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/subjects'),
+                loader: () => fetch('https://e-school-server-ten.vercel.app/subjects'),
                 element:<Courses></Courses>
 
             },
             {
                 path: '/subjects/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/subjects/${params.id}`),
+                loader: ({params}) => fetch(`https://e-school-server-ten.vercel.app/subjects/${params.id}`),
                 element:<Course></Course>
 
             },
@@ -45,7 +51,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element:<Blog></Blog>,
-                loader: () => fetch('http://localhost:5000/blog')
+                loader: () => fetch('https://e-school-server-ten.vercel.app/blog')
 
             },
             {

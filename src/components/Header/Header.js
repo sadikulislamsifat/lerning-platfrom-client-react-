@@ -27,6 +27,10 @@ const Header = () => {
     .catch(error => console.error(error))
   }
 
+  const handleDarkModeToggle = event => {
+    setDarkBtn(event.target.checked)
+  }
+
     return (
         <div  className='header'>
              <Navbar bg="transparent" expand="lg">
@@ -54,8 +58,17 @@ const Header = () => {
               
             
           </Nav>
-          <div className='mt-2 pb-3'>
+          <div onClick={handleDarkModeToggle} className='mt-2 pb-3 d-flex'>
+          <div onClick={handleDarkModeToggle} class="form-check  form-switch">
+  <input className="form-check-input mt-3" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+  <label className="form-check-label" for="flexSwitchCheckDefault"></label>
+</div>
+           {
+            darkBtn ? 
+            <span className='fs-3 me-3 ms-2 ' type=""> <HiSun className='text-dark'></HiSun> </span>
+            :
             <span className='fs-3 me-3 ms-2 ' type=""> <HiSun className='text-warning'></HiSun> </span>
+           }
           </div>
           <div onClick={handleShow}>
             {

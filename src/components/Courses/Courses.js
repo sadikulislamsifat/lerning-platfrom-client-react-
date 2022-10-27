@@ -11,9 +11,9 @@ const Courses = () => {
     const {darkMode} = useContext(AuthContext);
 
     return (
-        <div style={darkMode} className=''>
+        <div className=''>
 
-           <div style={{height: '35vh', width: '100%'}} className= " d-flex   justify-content-center align-items-center {darkMode.backgroudColor === 'black' ? 'bg-light' : 'bg-dark'}">
+           <div style={{height: '35vh', width: '100%'}} className= " d-flex   justify-content-center align-items-center bg-light">
            <div >
                 <div className='text-center w-100 container'>
                     <p className='fs-1'>Learn</p>

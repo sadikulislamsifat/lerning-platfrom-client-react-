@@ -7,6 +7,7 @@ import { AuthContext } from './../../context/AuthProvider/AuthProvider';
 import Courses from './../Courses/Courses';
 import Subjects from '../Courses/Subjects/Subjects';
 import Blog from './../Blog/Blog';
+import Login from './../Login/Login';
 
 const Home = () => {
     const {user} = useContext(AuthContext);
@@ -68,7 +69,9 @@ const Home = () => {
            </div>
         </div>
         <div>
-           {/* <Blog></Blog> */}
+            <Courses></Courses>
+            <Blog></Blog>
+           {/* <Login></Login> */}
 
         </div>
         </div>

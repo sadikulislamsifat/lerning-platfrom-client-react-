@@ -2,7 +2,7 @@ import React, { useContext,useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGoogle,  } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const SingUp = () => {
 
@@ -13,6 +13,7 @@ const SingUp = () => {
     const {loginProvider} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
 
     const handleGoogleSingin = () => {
         loginProvider(googleProvider)
@@ -27,6 +28,13 @@ const SingUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
+        })
+        .catch(e => console.error(e))
+    }
+    const handleGitHubSingin = () => {
+        loginProvider(gitHubProvider)
+        .then(result => {
+            const user = result.user;
         })
         .catch(e => console.error(e))
     }
@@ -82,7 +90,7 @@ const SingUp = () => {
 
                     <div className="d-flex justify-content-between px-5 fs-2 icons">
                         <a onClick={handleGoogleSingin} className='me-3'><FaGoogle></FaGoogle> </a>
-                        <a className='me-3'><FaGithub></FaGithub> </a>
+                        <a onClick={handleGitHubSingin} className='me-3'><FaGithub></FaGithub> </a>
                         <a onClick={handleFacebookSingin} className='me-3'><FaFacebook></FaFacebook> </a>
                         
                     </div>
