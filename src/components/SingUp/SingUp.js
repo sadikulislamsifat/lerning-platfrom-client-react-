@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGoogle,  } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 const SingUp = () => {
 
-    const {createUser, updateUserprofile} = useContext(AuthContext);
+    const {createUser, updateUserprofile, verifyEmail} = useContext(AuthContext);
 
     const [error, setError] = useState('');
 
@@ -54,7 +55,9 @@ const SingUp = () => {
             console.log(user)
             form.reset();
             setError('')
-            handleUpdateUserProfile(name, photoURL)
+            handleUpdateUserProfile(name, photoURL);
+            handleEmailVerification();
+            toast.success("Please verify your email address")
         })
         .catch(error => {
             console.error(error);
@@ -72,6 +75,12 @@ const SingUp = () => {
         .then(() => {})
         .catch(error => console.error(error))
     }
+    const handleEmailVerification = () => {
+        verifyEmail()
+        .then(() =>{})
+        .catch(e => console.error(e))
+    }
+
     return (
        <div style={{minHeight: '100vh'}} className='mb-5'>
          <div  className='container d-flex justify-content-center '>
