@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Header = () => {
+  const [darkBtn , setDarkBtn] = useState(false);
 
   const [show, setShow] = useState(false);
 

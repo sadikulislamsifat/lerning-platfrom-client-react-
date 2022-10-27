@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Subjects.css'
 
 const Subjects = ({subject}) => {
-    const {achivment, banner, description, subject_name} = subject;
+    const {achivment, banner, description, subject_name, id} = subject;
     return (
         <div>
             <div style={{height: '310px', color:'black'}} className="col subjects-card mb-3">
@@ -16,8 +16,8 @@ const Subjects = ({subject}) => {
       <img style={{height: '170px'}} src={banner} class="card-img-top" alt="..."/>
       <div className="card-body p-0">
         
-        <p className="card-text">{description.length > 200 ?
-        <p>{description.slice(0, 80) + '...'} <Link>Explore more</Link> </p>
+        <p className="card-text">{description.length > 80 ?
+        <p>{description.slice(0, 80) + '...'} <Link to={`/subjects/${id}`}>Explore more</Link> </p>
         :
         <p>{description}</p>
     }</p>
